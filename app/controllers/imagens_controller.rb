@@ -26,7 +26,7 @@ class ImagensController < ApplicationController
 
     respond_to do |format|
       if @imagem.save
-        format.html { redirect_to @imagem, notice: 'Presente foi Criado.' }
+        format.html { redirect_to imagens_path, notice: 'Presente foi Criado.' }
         format.json { render :show, status: :created, location: @imagem }
       else
         format.html { render :new }
@@ -38,7 +38,7 @@ class ImagensController < ApplicationController
   def update
     respond_to do |format|
       if @imagem.update(imagem_params)
-        format.html { redirect_to @imagem, notice: 'Presente foi Alterado.' }
+        format.html { redirect_to imagens_path, notice: 'Presente foi Alterado.' }
         format.json { render :show, status: :ok, location: @imagem }
       else
         format.html { render :edit }
