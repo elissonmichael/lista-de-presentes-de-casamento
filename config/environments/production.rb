@@ -1,25 +1,5 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      bucket: ENV.fetch('S3_BUCKET_NAME'),
-      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      s3_region: ENV.fetch('AWS_REGION'),
-    }
-  }
-
-  config.action_mailer.default_url_options = { :host => 'cadernos.eng.br' }
-  ActionMailer::Base.smtp_settings = {
-    :user_name            => ENV['SENDGRID_USERNAME'],
-    :password             => ENV['SENDGRID_PASSWORD'],
-    :address              => "smtp.sendgrid.net",
-    :port                 => 587,
-    :enable_starttls_auto => true,
-    :authentication       => :plain,
-    :domain               => "cadernos.eng.br"
-  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
