@@ -1,10 +1,13 @@
 <div class="col-sm-4">
   <div class="card" style="width: 20rem;">
-    <%= render partial: "layouts/carousel", locals:{id: id, imagens: objetos}%>
+    <%= image_tag(imagem.url, class:"img-fluid rounded") %>
     <div class="card-block">
-      <h4 class="card-title"><%=titulo%></h4>
-      <p class="card-text"><%=descricao%></p>
-      <a href=<%=link%> class="btn btn-outline-primary">Ver <%=titulo%></a>
+      <h4 class="card-title"><%=imagem.presente%></h4>
+      <p class="card-text">
+        <%=imagem.disponibilidade%>
+        <p><%= imagem.updated_at.strftime("%l:%M%P %d/%m/%Y") unless imagem.disponivel %> </p>
+      </p>
+      <%= link_to(imagem.link_name, imagem_path(:id => imagem.id, :nome => params[:nome]), class: imagem.button_class) %>
     </div>
   </div>
 </div>

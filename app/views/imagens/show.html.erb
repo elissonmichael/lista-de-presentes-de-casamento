@@ -1,22 +1,26 @@
 <div class="row">
   <div class="col-xs-8 col-sm-4 col-md-3 col-lg-8">
     <%= image_tag(@imagem.url, class:"img-fluid rounded") %>
-
+    <br>    <br>
     <p>
-      <strong>Presente:</strong>
+      <strong>Nome:</strong>
       <%= @imagem.presente %>
     </p>
 
-    <% if @imagem.nome.present? %>
-      <p>
-        <strong>Nome:</strong>
-        <%= @imagem.nome %>
-      </p>
+    <p>
+      <strong>Situação:</strong>
+      <%= @imagem.disponibilidade %>
+    </p>
 
+    <% unless @imagem.disponivel %>
       <p>
-        <strong>Registrado Em:</strong>
-        <%= @imagem.updated_at %>
+        <strong>Em:</strong>
+        <%= @imagem.updated_at.strftime("%l:%M%P %d/%m/%Y") %>
       </p>
     <% end %>
   </div>
 </div>
+<% if @imagem.disponivel %>
+  <%= link_to('Confirmar', escolher_imagem_path(:nome => params[:nome]), class: 'btn btn-primary') %>
+<% end %>
+<%=link_to 'Voltar', root_path(:nome => params[:nome]), class: 'btn btn-warning' %>

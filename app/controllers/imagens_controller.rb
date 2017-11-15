@@ -1,5 +1,11 @@
 class ImagensController < ApplicationController
-  before_action :set_imagem, only: [:show, :edit, :update, :destroy]
+  before_action :set_imagem, only: [:show, :edit, :update, :destroy, :escolher]
+  before_action :check_nome, only: [:escolher, :show]
+
+  def escolher
+    @imagem.update_attribute(:nome, params[:nome])
+    redirect_to root_path(nome: params[:nome])
+  end
 
   def index
     @imagens = Imagem.all

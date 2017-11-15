@@ -1,7 +1,16 @@
 <div class="row">
-  <div class="col">
-    <div class="text-center">
-      <h2> Lista de Aline & Élisson </h2>
-    </div>
+  <div class="col text-center">
+    <h4>
+      Olá <%= params[:nome] %>, essa é a Lista de Aline & Élisson
+      <%= link_to 'Alterar Nome', nomes_path, class: 'btn btn-warning' %>
+    </h4>
   </div>
+</div>
+
+<div class="row">
+  <% @imagens.each do |imagem| %>
+    <div class="col text-center">
+      <%= render partial: "layouts/cards", locals: { imagem: imagem }%>
+    </div>
+  <% end %>
 </div>

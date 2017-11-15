@@ -5,6 +5,7 @@
     <tr>
       <th>Imagem</th>
       <th>Nome</th>
+      <th>Situacao</th>
       <th>Criado Em</th>
       <th>Modificado Em</th>
       <th>Opções</th>
@@ -15,11 +16,11 @@
       <tr>
         <td><%= image_tag(imagem.url, class:"img-fluid rounded") %></td>
         <td><%= imagem.presente %></td>
+        <td><%= imagem.disponibilidade %></td>
         <td><%= imagem.created_at.strftime("%l:%M%P %d/%m/%Y") %></td>
         <td><%= imagem.updated_at.strftime("%l:%M%P %d/%m/%Y") %></td>
         <td>
           <div class="btn-group" role="group">
-            <%= link_to 'Ver', imagem, class: "btn btn-secondary btn-info" %>
             <%= render "materiais/links_editar_excluir", model: imagem, classe: "btn-secondary" %>
           </div>
         </td>

@@ -1,0 +1,10 @@
+<b> Lista de Aline & Élisson </b>
+<div class="row">
+  <div class="col text-center">
+    <br>
+    <%= form_tag root_path, method: :get, class: 'form-inline my-2 my-lg-0' do %>
+      <%= text_field_tag 'nome', params[:nome], placeholder: 'Seu Nome para a Lista', class: 'form-control mr-sm-2' %>
+      <%= button_tag 'Começar', type: 'submit', class: 'btn btn-outline-success my-2 my-sm-0' %>
+    <% end %>
+  </div>
+</div>
