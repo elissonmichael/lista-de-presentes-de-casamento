@@ -1,0 +1,2 @@
+<%= link_to 'Editar', {controller: model.class.to_s.downcase.pluralize, action: 'edit', id: model}, class: "btn {classe} btn-warning" %>
+<%= link_to 'Apagar', model, method: :delete, data: { confirm: 'Tem Certeza?' }, class: "btn {classe} btn-danger" %>

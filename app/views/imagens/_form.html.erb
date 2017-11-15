@@ -1,0 +1,13 @@
+<%= simple_form_for(@imagem) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :presente, label: 'Nome do Presente' %>
+    <%= f.input :url, label: 'Link Imagem (URL)' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Salvar', class: "btn btn-primary" %>
+  <%= link_to 'Voltar', imagens_path, class: "btn btn-info" %>
+  </div>
+<% end %>

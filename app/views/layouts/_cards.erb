@@ -1,0 +1,10 @@
+<div class="col-sm-4">
+  <div class="card" style="width: 20rem;">
+    <%= render partial: "layouts/carousel", locals:{id: id, imagens: objetos}%>
+    <div class="card-block">
+      <h4 class="card-title"><%=titulo%></h4>
+      <p class="card-text"><%=descricao%></p>
+      <a href=<%=link%> class="btn btn-outline-primary">Ver <%=titulo%></a>
+    </div>
+  </div>
+</div>

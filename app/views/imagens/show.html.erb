@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-8 col-sm-4 col-md-3 col-lg-8">
+    <%= image_tag(@imagem.url, class:"img-fluid rounded") %>
+
+    <p>
+      <strong>Presente:</strong>
+      <%= @imagem.presente %>
+    </p>
+
+    <% if @imagem.nome.present? %>
+      <p>
+        <strong>Nome:</strong>
+        <%= @imagem.nome %>
+      </p>
+
+      <p>
+        <strong>Registrado Em:</strong>
+        <%= @imagem.updated_at %>
+      </p>
+    <% end %>
+  </div>
+</div>

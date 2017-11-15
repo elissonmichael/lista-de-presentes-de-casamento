@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Aline</title>
+    <link rel="icon" href="<%= asset_path('logo.png') %>">
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <br>
+      <%= render partial: "layouts/flash_messages", flash: flash %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
