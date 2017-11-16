@@ -4,7 +4,8 @@ class ImagensController < ApplicationController
 
   def escolher
     @imagem.update_attribute(:nome, params[:nome])
-    redirect_to root_path(nome: params[:nome])
+    redirect_to root_path(nome: params[:nome]),
+    notice: 'Agradecemos a Sua Colaboração, Ela é Muito Importante para Nossa Vida de Casado que irá se Iniciar.'
   end
 
   def index

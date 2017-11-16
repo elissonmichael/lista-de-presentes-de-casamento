@@ -17,6 +17,9 @@
         <strong>Em:</strong>
         <%= @imagem.updated_at.strftime("%l:%M%P %d/%m/%Y") %>
       </p>
+    <% else %>
+      <p> <u>Por favor, tenha certeza ao clicar em confirmar. </u></p>
+      <p> <b>Depois dessa etapa não será possível alterar. </b></p>
     <% end %>
   </div>
 </div>
