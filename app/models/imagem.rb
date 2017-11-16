@@ -1,6 +1,6 @@
 class Imagem < ApplicationRecord
   validates_presence_of :presente, :url
-  default_scope { order('id DESC') }
+  default_scope { order('nome desc, id asc') }
 
   def button_class
     disponivel ? 'btn btn-outline-primary' : 'btn btn-outline-success'
