@@ -3,11 +3,9 @@
 <table class="table table-striped table-responsive">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Imagem</th>
       <th>Nome</th>
-      <th>Situacao</th>
-      <th>Criado Em</th>
+      <th>Situação</th>
       <th>Modificado Em</th>
       <th>Opções</th>
     </tr>
@@ -15,12 +13,10 @@
   <tbody>
     <% @imagens.each do |imagem| %>
       <tr>
-        <td><%= imagem.id %></td>
-        <td><%= image_tag(imagem.url, class:"img-fluid rounded") %></td>
+        <td><%= image_tag(imagem.url, class:"img-thumbnail rounded border mx-auto") %></td>
         <td><%= imagem.presente %></td>
         <td><%= imagem.disponibilidade %></td>
-        <td><%= imagem.created_at.strftime("%l:%M%P %d/%m/%Y") %></td>
-        <td><%= imagem.updated_at.strftime("%l:%M%P %d/%m/%Y") %></td>
+        <td><%= imagem.presenteado_em %></td>
         <td>
           <div class="btn-group" role="group">
             <%= render "materiais/links_editar_excluir", model: imagem, classe: "btn-secondary" %>

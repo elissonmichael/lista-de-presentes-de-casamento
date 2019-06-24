@@ -18,4 +18,7 @@ class Imagem < ApplicationRecord
     nome.blank?
   end
 
+  def presenteado_em
+    updated_at.strftime("%l:%M%P %d/%m/%Y")
+  end
 end

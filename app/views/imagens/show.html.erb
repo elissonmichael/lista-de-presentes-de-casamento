@@ -1,7 +1,9 @@
-<div class="row">
-  <div class="col-xs-8 col-sm-4 col-md-3 col-lg-8">
-    <%= image_tag(@imagem.url, class:"img-fluid rounded") %>
-    <br>    <br>
+<div class="row text-center">
+  <div class="col-xs-4">
+    <%= image_tag(@imagem.url, class:"img-fluid rounded border mx-auto d-block", size: 300) %>
+  </div>
+  <div class="offset-md-1 col-xs-4">
+    <br>
     <p>
       <strong>Nome:</strong>
       <%= @imagem.presente %>
@@ -15,15 +17,15 @@
     <% unless @imagem.disponivel %>
       <p>
         <strong>Em:</strong>
-        <%= @imagem.updated_at.strftime("%l:%M%P %d/%m/%Y") %>
+        <%= @imagem.presenteado_em %>
       </p>
     <% else %>
       <p> <u>Por favor, tenha certeza ao clicar em confirmar. </u></p>
       <p> <b>Depois dessa etapa não será possível alterar. </b></p>
     <% end %>
+    <% if @imagem.disponivel %>
+      <%= link_to('Confirmar', escolher_imagem_path(:nome => params[:nome]), class: 'btn btn-primary') %>
+    <% end %>
+    <%=link_to 'Voltar', root_path(:nome => params[:nome]), class: 'btn btn-warning' %>
   </div>
 </div>
-<% if @imagem.disponivel %>
-  <%= link_to('Confirmar', escolher_imagem_path(:nome => params[:nome]), class: 'btn btn-primary') %>
-<% end %>
-<%=link_to 'Voltar', root_path(:nome => params[:nome]), class: 'btn btn-warning' %>
