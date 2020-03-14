@@ -16,7 +16,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'simple_form', '~> 3.4.0'
+gem 'simple_form', '~> 5.0.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
